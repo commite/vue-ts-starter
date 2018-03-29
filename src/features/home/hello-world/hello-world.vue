@@ -9,7 +9,7 @@
     @Prop() private msg: string;
 
     get count(): number {
-      return this.$store.state.count;
+      return this.$store.state.count.count;
     }
 
     private click(): void {

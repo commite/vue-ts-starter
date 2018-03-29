@@ -1,18 +1,19 @@
-import Vue from 'vue';
 import Vuex from 'vuex';
 
-Vue.use(Vuex);
+interface CountState {
+  count: number;
+}
 
-export default new Vuex.Store({
+export const CountStore = {
   state: {
     count: 0,
   },
   mutations: {
-    increment(state) {
+    increment(state: CountState) {
       state.count++;
     },
   },
   actions: {
 
   },
-});
+};
