@@ -7,5 +7,13 @@
   @Component
   export default class HelloWorld extends Vue {
     @Prop() private msg: string;
+
+    get count(): number {
+      return this.$store.state.count;
+    }
+
+    private click(): void {
+      this.$store.commit('increment');
+    }
   }
 </script>
