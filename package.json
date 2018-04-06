@@ -22,7 +22,6 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "@storybook/vue": "^3.3.15",
     "@types/chai": "^4.1.0",
     "@types/mocha": "^2.2.46",
     "@vue/cli-plugin-e2e-cypress": "^3.0.0-beta.6",
