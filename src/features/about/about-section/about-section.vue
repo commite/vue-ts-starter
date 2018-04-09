@@ -1,1 +1,0 @@
-<template lang="pug" src="./about-section.pug"></template>

@@ -1,8 +1,8 @@
-<template lang="pug" src="./home-section.pug"></template>
+<template lang="pug" src="./home.pug"></template>
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-  import HelloWorld from '@/features/home/hello-world/hello-world.vue'; // @ is an alias to /src
+  import HelloWorld from '@/components/home/hello-world/hello-world.vue';
 
   @Component({
     components: {
