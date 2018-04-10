@@ -4,16 +4,12 @@ interface CountState {
   count: number;
 }
 
-export const CountStore = {
-  state: {
-    count: 0,
-  },
-  mutations: {
-    increment(state: CountState) {
-      state.count++;
-    },
-  },
-  actions: {
+export const countState = {
+  count: 0,
+};
 
+export const countMutations = {
+  countIncrement(state: CountState) {
+    state.count++;
   },
 };

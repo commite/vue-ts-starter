@@ -24,10 +24,13 @@ export class MockHandlers {
   }
 
   private getUser(params: RequestParams): Observable<GetUserResponse> {
+    const regexResult = /^\/users\/([^\/]+)/.exec(params.url);
+    const id = regexResult ? regexResult[1] : 'undefined';
+
     return of({
         data: {
           id: 0,
-          first_name: 'Mock',
+          first_name: `Mock ${id}`,
           last_name: 'Mocked',
           avatar: '',
         },

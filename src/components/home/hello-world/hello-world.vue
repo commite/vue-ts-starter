@@ -8,13 +8,10 @@
   export default class HelloWorld extends Vue {
     @Prop() private msg: string;
     @Prop() private userName: string;
+    @Prop() private count: number;
 
-    get count(): number {
-      return this.$store.state.count.count;
-    }
-
-    private click(): void {
-      this.$store.commit('increment');
+    public onCountClick(): void {
+      this.$emit('count-click');
     }
   }
 </script>
