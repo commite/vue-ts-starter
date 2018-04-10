@@ -7,6 +7,7 @@
   @Component
   export default class HelloWorld extends Vue {
     @Prop() private msg: string;
+    @Prop() private userName: string;
 
     get count(): number {
       return this.$store.state.count.count;
