@@ -16,7 +16,7 @@
   export default class Login extends Vue {
 
     public onLoginSubmit(body: LoginBody): void {
-      this.$store.commit(userActionsIndex.login, body);
+      this.$store.dispatch(userActionsIndex.login, body);
     }
   }
 </script>
