@@ -1,0 +1,28 @@
+form
+  display flex
+  flex-flow column nowrap
+  justify-content flex-start
+  align-items flex-end
+  min-width 300px
+  >*:not(:first-child)
+    margin-top 1rem
+  div.input-container
+    display flex
+    flex-flow column nowrap
+    justify-content flex-start
+    align-items flex-start
+    width 100%
+    input
+      width 100%
+    .error
+      color rgba(red, .8);
+      font-size .8rem
+      min-height .8rem
+  button
+    border 1px solid rgba(blue, .8)
+    background-color rgba(blue, .7)
+    color white
+    font-size .8rem
+    padding .2rem .8rem
+    border-radius .2rem
+    cursor pointer

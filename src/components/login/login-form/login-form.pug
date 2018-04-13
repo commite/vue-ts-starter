@@ -1,0 +1,10 @@
+form#login-form
+  div.input-container
+    label(for="email") Email
+    input(v-validate="'required|email'", type="text", name="email")
+    span.error(v-show="errors.has('email')") {{ errors.first('email') }}
+  div.input-container
+    label(for="password") Password
+    input(v-validate="'required'", type="password", name="password")
+    span.error(v-show="errors.has('password')") {{ errors.first('password') }}
+  button(type="submit", form="login-form") Login

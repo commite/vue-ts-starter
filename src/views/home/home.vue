@@ -2,9 +2,9 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-  import { UserService } from '@/services/user/user.service';
-  import { CountService } from '@/services/count/count.service';
   import HelloWorld from '@/components/home/hello-world/hello-world.vue';
+  import { userActionsIndex } from '@/store/user.store';
+  import { countActionsIndex } from '@/store/count.store';
 
   @Component({
     components: {
@@ -16,17 +16,13 @@
     },
   })
   export default class Home extends Vue {
-
-    private userService: UserService = new UserService(this.$store);
-    private countService: CountService = new CountService(this.$store);
-
     public onCountClick(): void {
-      this.countService.increment();
-      this.userService.getUser(this.$store.state.count + 1).subscribe();
+      this.$store.dispatch(countActionsIndex.increment);
+      this.$store.dispatch(userActionsIndex.getUser, this.$store.state.count + 1);
     }
 
     private created(): void {
-      this.userService.getUser(1).subscribe();
+      this.$store.dispatch(userActionsIndex.getUser, 1);
     }
   }
 </script>
