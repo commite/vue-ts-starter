@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { countState, countMutations, countActions } from './count.store';
-import { userState, userMutations, userActions } from './user.store';
+import { userState, userMutations } from './user.store';
 import { User } from '@/models/user.model';
 
 Vue.use(Vuex);
@@ -21,7 +21,6 @@ export default new Vuex.Store({
     countMutations,
   ),
   actions: Object.assign({},
-    userActions,
     countActions,
   ),
 });

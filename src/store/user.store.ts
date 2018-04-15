@@ -26,21 +26,3 @@ export const userMutations = {
     state.user = INITIAL_STATE;
   },
 };
-
-export const userActionsIndex = {
-  getUser: 'getUser',
-  login: 'login',
-};
-
-export const userActions = {
-  getUser(context: Context, userId: string) {
-    return HttpClient.get<GetUserResponse>(`/users/${userId}`).subscribe(
-      (res: GetUserResponse) => {
-        context.commit('setUser', res.data);
-      },
-    );
-  },
-  login(context: Context, body: LoginBody) {
-    return HttpClient.post('/login', body).subscribe();
-  },
-};

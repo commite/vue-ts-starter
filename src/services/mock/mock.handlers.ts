@@ -5,11 +5,13 @@ import { Method, RequestParams, HandlerIndex } from '../../models/misc/mock';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { tap } from 'rxjs/operators';
+import { LoginResponse } from '@/models/api/auth.model';
 
 export class MockHandlers {
 
   private index: HandlerIndex[] = [
     { method: 'GET', url: /^\/users\/[^\/]+/, handler: this.getUser },
+    { method: 'POST', url: /^\/login/, handler: this.login },
   ];
 
   public handle<T>(method: Method, params: RequestParams): Observable<T> | null {
@@ -36,5 +38,13 @@ export class MockHandlers {
         },
       },
     );
+  }
+
+  private login(params: RequestParams): Observable<LoginResponse> {
+    return of({
+      data: {
+        token: 'asdfasdfasdf',
+      },
+    });
   }
 }
