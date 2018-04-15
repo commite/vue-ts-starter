@@ -27,5 +27,9 @@
         this.$router.push('/home');
       });
     }
+
+    private created(): void {
+      this.authService.logout();
+    }
   }
 </script>
